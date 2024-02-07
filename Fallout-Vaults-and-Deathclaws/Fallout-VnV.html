@@ -1,4 +1,4 @@
-<h5>Fallout: Vaults & Deathclaws PNP </h5>
+<h5>Fallout: Vaults & Deathclaws Roleplaying System </h5>
 <input type="radio" name="attr_tab" class="sheet-tab sheet-tab1" value="1" title="Prime" checked="checked" />
 <input type="radio" name="attr_tab" class="sheet-tab sheet-tab3" value="3" title="Combat" />
 <input type="radio" name="attr_tab" class="sheet-tab sheet-tab5" value="4" title="Perks & Inv" />
@@ -137,12 +137,6 @@
             <input type="number" class="sheet-number" name="attr_base_detection" value='(25 + (@{perception_base} * 5))' disabled="true" />
         </div>
         <div>
-            <input type="text" class="sheet-text_statsname" value="Limb Res. (LR)" readonly style="width:40%" />
-            <input type="number" class="sheet-number" name="attr_resistance_limb" value='@{mod_resistance_limb} + @{base_resistance_limb}' disabled="true"/>
-            <input type="number" class="sheet-number" name="attr_mod_resistance_limb" value="0" />
-            <input type="number" class="sheet-number" name="attr_base_resistance_limb" value='(@{endurance_base})' disabled="true" />
-        </div>
-        <div>
             <input type="text" class="sheet-text_statsname" value="Melee Damage (MD)" readonly style="width:40%" />
             <input type="number" class="sheet-number" name="attr_melee_damage" value='@{mod_melee_damage} + @{base_melee_damage}' disabled="true"/>
             <input type="number" class="sheet-number"name="attr_mod_melee_damage" value="0" />
@@ -176,7 +170,7 @@
             <input type="text" class="sheet-text_statsname" value="System Shock (SS)" readonly style="width:40%" />
             <input type="number" class="sheet-number" name="attr_system_shock" value='@{mod_system_shock} + @{base_system_shock}' disabled="true"/>
             <input type="number" class="sheet-number"name="attr_mod_system_shock" value="0" />
-            <input type="number" class="sheet-number" name="attr_base_system_shock" value='(ceil((@{endurance_base})/2))' disabled="true" />
+            <input type="number" class="sheet-number" name="attr_base_system_shock" value='(@{endurance_base})' disabled="true" />
         </div>
         <div>
             <input type="text" class="sheet-text_statsname" value="Vault Limit (VL)" readonly style="width:40%" />
@@ -208,7 +202,7 @@
             <input type="text" class="sheet-text_stattag" value="Temp" readonly style="width:11%"/>
             <input type="text" class="sheet-text_stattag" value="+/-" readonly style="width:11%"/>
         </div>
-         <div>
+        <div>
             <button class="sheet-skill_button" type='roll' name="attr_roll-archery" value="&{template:default} {{name=@{character_name}}} {{Archery=[[[[@{archery}]] + [[?{Skill Mod|0}]] - [[1d100]] ]]}}" /></button>
             <input type="text" class="sheet-text_skillname" value="Archery" readonly />
             <input name="attr_tagskill31" value="1" type="checkbox">&nbsp;&nbsp;
@@ -446,16 +440,13 @@
                             <input type="number" class="sheet-number" name="attr_dr-temp" value="0" style="width:23%"/>
                         </div>
                         <div>
-                            <input type="text" class="sheet-text_damage" value="LR" readonly style="width:20%"/>
-                            <input type="number" class="sheet-number" name="attr_lr-current" value="0" style="width:23%"/>
-                            <input type="number" class="sheet-number" name="attr_lr-max" value="0" style="width:23%"/>
-                            <input type="number" class="sheet-number" name="attr_lr-temp" value="0" style="width:23%"/>
-                        </div>
-                        <div>
                             <input type="text" class="sheet-text_damage" value="SS" readonly style="width:20%"/>
                             <input type="number" class="sheet-number" name="attr_sscount-current" value="0" style="width:23%"/>
                             <input type="number" class="sheet-number" name="attr_sscount-max" value="0" style="width:23%"/>
-                            <input type="number" class="sheet-number" name="attr_sscount-temp" value="0" style="width:23%"/>
+                        </div>
+                        <div>
+                            <input type="text" class="sheet-text_damage" value="Rad" readonly style="width:20% ; color: limegreen"/>
+                            <input type="number" class="sheet-number" name="attr_condition-rad" value='0' style="background:limegreen"/>
                         </div>
                         <div>
                             <input type="text" class="sheet-text_damage" value="Successes" readonly style="width:45%"/>
@@ -469,31 +460,39 @@
                             <input type="checkbox" name="attr_failure_2" value="1" class="sheet-bigcheck"/><span></span>
                             <input type="checkbox" name="attr_failure_3" value="1" class="sheet-bigcheck"/><span></span>
                         </div>
+                        <div>
+                            <input type="text" class="sheet-text_damage" value="SQ" readonly style="width:25%"/>
+                            <button type="roll" class="sheet-skill_button" name="attr_sequence_roll" value="&{template:default} {{name=@{character_name}}} {{Sequence=[[[[@{sequence}]] + [[?{Sequence Mod|0}]] + [[1d10]] &{tracker}]]}}"></button>
+                        </div>
                     </div>
                     <div class='sheet-col'>
                         <div>
-                            <input type="text" class="sheet-text_damage" value="Head" readonly style="width:30%"/>
-                            <input type="checkbox" name="attr_cripple_head" value="1" class="sheet-bigcheck"/><span></span>
+                            <input type="text" class="sheet-text_damage" value="Crippled" readonly style="width:50%"/>
+                            <input type="checkbox" name="attr_crippled" value="1" class="sheet-bigcheck"/><span></span>
                         </div>
                         <div>
-                            <input type="text" class="sheet-text_damage" value="Torso" readonly style="width:30%"/>
-                            <input type="checkbox" name="attr_cripple_torso" value="1" class="sheet-bigcheck"/><span></span>
+                            <input type="text" class="sheet-text_damage" value="Knock Down" readonly style="width:50%"/>
+                            <input type="checkbox" name="attr_knock_down" value="1" class="sheet-bigcheck"/><span></span>
                         </div>
                         <div>
-                            <input type="text" class="sheet-text_damage" value="Groin" readonly style="width:30%"/>
-                            <input type="checkbox" name="attr_cripple_groin" value="1" class="sheet-bigcheck"/><span></span>
+                            <input type="text" class="sheet-text_damage" value="Bleed" readonly style="width:40%"/>
+                            <input type="number" class="sheet-number" name="attr_bleed" value="0" style="width:23%"/>
                         </div>
                         <div>
-                            <input type="text" class="sheet-text_damage" value="Arm L" readonly style="width:30%"/>
-                            <input type="checkbox" name="attr_cripple_left_arm" value="1" class="sheet-bigcheck"/><span></span>
-                            <input type="text" class="sheet-text_damage" value="R" readonly style="width:10%"/>
-                            <input type="checkbox" name="attr_cripple_right_arm" value="1" class="sheet-bigcheck"/><span></span>
+                            <input type="text" class="sheet-text_damage" value="Burn" readonly style="width:40%"/>
+                            <input type="number" class="sheet-number" name="attr_burn" value="0" style="width:23%"/>
                         </div>
                         <div>
-                            <input type="text" class="sheet-text_damage" value="Leg L" readonly style="width:30%"/>
-                            <input type="checkbox" name="attr_cripple_left_leg" value="1" class="sheet-bigcheck"/><span></span>
-                            <input type="text" class="sheet-text_damage" value="R" readonly style="width:10%"/>
-                            <input type="checkbox" name="attr_cripple_right_leg" value="1" class="sheet-bigcheck"/><span></span>
+                            <input type="text" class="sheet-text_damage" value="Dazed" readonly style="width:40%"/>
+                            <input type="number" class="sheet-number" name="attr_dazed" value="0" style="width:23%"/>
+                        </div>
+                        <div>
+                            <input type="text" class="sheet-text_damage" value="Pulsed" readonly style="width:40%"/>
+                            <input type="number" class="sheet-number" name="attr_pulsed" value="0" style="width:23%"/>
+                        </div>
+                        <div>
+                            <input type="text" class="sheet-text_damage" value="Stunned" readonly style="width:40%"/>
+                            <input type="number" class="sheet-number" name="attr_stunned" value="0" style="width:23%"/>
                         </div>
                         <div>
                             <input type="text" class="sheet-text_damage" value="Fatigue" readonly style="width:45%"/>
@@ -506,12 +505,6 @@
                             <option value="5">5</option>
                             <option value="6">6</option>
                             </select>
-                        </div>
-                        <div>
-                            <input type="text" class="sheet-text_damage" value="Rad" readonly style="width:20% ; color: limegreen"/>
-                            <input type="number" class="sheet-number" name="attr_condition-rad" value='0' style="background:limegreen"/>
-                            <input type="text" class="sheet-text_damage" value="SQ" readonly style="width:25%"/>
-                            <button type="roll" class="sheet-skill_button" name="attr_sequence_roll" value="&{template:default} {{name=@{character_name}}} {{Sequence=[[[[@{sequence}]] + [[?{Sequence Mod|0}]] + [[1d10]] &{tracker}]]}}"></button>
                         </div>
                     </div>
                     </div>
@@ -653,10 +646,10 @@
                         <option value="0"> </option>
                         <option value="@{archery}">Archery</option>
                         <option value="@{big_guns}">Big Guns</option>
-			<option value="@{computer_science}">Computer Science</option>
+                        <option value="@{computer_science}">Computer Science</option>
                         <option value="@{deception}">Deception</option>
-			<option value="@{engineer}">Engineer</option>
                         <option value="@{energy_weapons}">Energy Weapons</option>
+                        <option value="@{engineer}">Engineer</option>
                         <option value="@{gambling}">Gambling</option>
                         <option value="@{melee_weapons}">Melee Weapons</option>
                         <option value="@{small_guns}">Small Guns</option>
@@ -720,8 +713,8 @@
                         <option value="@{big_guns}">Big Guns</option>
                         <option value="@{computer_science}">Computer Science</option>
                         <option value="@{deception}">Deception</option>
-			<option value="@{engineer}">Engineer</option>
                         <option value="@{energy_weapons}">Energy Weapons</option>
+                        <option value="@{engineer}">Engineer</option>
                         <option value="@{gambling}">Gambling</option>
                         <option value="@{melee_weapons}">Melee Weapons</option>
                         <option value="@{small_guns}">Small Guns</option>
@@ -791,16 +784,16 @@
         <div class="sheet-tab-br"></div>
         <div>
             <input type="text" class="sheet-text_damage" value="Total CW" readonly style='width:25%'/>
-            <input type="text" class="sheet-number" name="attr_total_carry_weight" style='width:10%'/>
+            <input type="text" class="sheet-number" name="attr_total_carry_weight" style='width:20%'/>
             <input type="text" class="sheet-text_damage" value="Current CW" readonly style='width:25%'/>
-            <input type="text" class="sheet-number" name="attr_current_carry_weight" style='width:10%'/>
+            <input type="text" class="sheet-number" name="attr_current_carry_weight" style='width:20%'/>
         </div>
         <div>
             <input type="text" class="sheet-text_damage" value="Caps" readonly style='width:20%'/>&nbsp;
-            <input type="text" class="sheet-number" name="attr_caps" style='width:10%'/>
+            <input type="text" class="sheet-number" name="attr_caps" style='width:25%'/>
         </div>
         <div>
-            <textarea name="attr_item_text" style="width:98%;height:10%"></textarea>
+            <textarea name="attr_item_text" style="width:90%;height:10%"></textarea>
         </div>
     </div>
     <fieldset class="repeating_inventory">
@@ -808,15 +801,13 @@
         <div class="sheet-center" style="width:95%">
             <div class="sheet-tab-br"></div>
             <div>
-                <input type="text" class="sheet-text_damage" value="Item" readonly style="width:10%"/>
-                <input type="text" class="sheet-number" name="attr_item_name" style="width:20%"/>
-                <input type="text" class="sheet-text_damage" value="Weight" readonly style="width:10%"/>
-                <input type="text" class="sheet-number" name="attr_item_weight" style="width:20%"/>
-                <input type="text" class="sheet-text_damage" value="Amount" readonly style="width:10%"/>
-                <input type="text" class="sheet-number" name="attr_item_amount" style="width:20%"/>
+                <input type="text" class="sheet-text_damage" value="Item" readonly style="width:15%"/>
+                <input type="text" class="sheet-number" name="attr_item_name" style="width:30%"/>
+                <input type="text" class="sheet-text_damage" value="Weight" readonly style="width:15%"/>
+                <input type="text" class="sheet-number" name="attr_item_weight" style="width:30%"/>
             </div>
            <div>
-           <textarea name="attr_item_text" style="width:98%;height:10%"></textarea>
+           <textarea name="attr_item_text" style="width:90%;height:10%"></textarea>
             </div>
         </div>
     </fieldset>
@@ -907,3 +898,26 @@
     </div>
     </fieldset>
 </div>
+<script type="text/worker">
+    on('change:repeating_inventory:item_weight remove:repeating_inventory', function() {
+        getSectionIDs('repeating_inventory', function(IDArray) {
+            var fieldNames = [];
+            for (var i=0; i < IDArray.length; i++) {
+                fieldNames.push('repeating_inventory_' + IDArray[i] + '_item_weight');
+            }
+            getAttrs(fieldNames, function(values) {
+                var output = {};
+                var totalWeight = 0;
+
+                for (var i=0; i < IDArray.length; i++) {
+                    var weight = parseFloat(values['repeating_inventory_' + IDArray[i] + '_item_weight']) || 0;
+                    totalWeight += weight;
+                    output['repeating_inventory_' + IDArray[i]] = weight;
+                }
+
+                output['current_carry_weight'] = totalWeight;
+                setAttrs(output);
+            });
+        });
+    });
+</script>

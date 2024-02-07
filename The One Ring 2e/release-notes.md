@@ -4,6 +4,14 @@ This is a rewrite based on the early 2e (basic) and 1e edition that also include
 
 # Release History
 
+## 03.08.00 (Build 29)
+
+- added dark theme 
+
+## 03.07.00 (Build 28)
+
+- added third adversary weapon
+
 ## 03.06.00 (Build 27)
 
 - fixed missing checkboxes stance parry, shield parry, other parry
