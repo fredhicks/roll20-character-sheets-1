@@ -908,13 +908,13 @@
                 <div class="sheet-container-single-spell">
                     <div class="sheet-style-acao">
                         <input type="hidden" class="sheet-tipoacaoshow" name="attr_tipoacaoshow" value="" >
-                        <img class="sheet-img-acao" src="https://raw.githubusercontent.com/Capycat-Games/roll20-character-sheets/24d74a3cc49e69bf42c854cd8b1c5ee4f8e7b8f1/Skyfall/imgs/acao.svg"/>
-                        <img class="sheet-img-bonus" src="https://raw.githubusercontent.com/Capycat-Games/roll20-character-sheets/24d74a3cc49e69bf42c854cd8b1c5ee4f8e7b8f1/Skyfall/imgs/bonus.svg"/>
-                        <img class="sheet-img-livre" src="https://raw.githubusercontent.com/Capycat-Games/roll20-character-sheets/1b8f412973cf0296d09e189b0c18752ac377bfc5/Skyfall/imgs/livre.svg"/>
-                        <img class="sheet-img-passiva" src="https://raw.githubusercontent.com/Capycat-Games/roll20-character-sheets/1b8f412973cf0296d09e189b0c18752ac377bfc5/Skyfall/imgs/passiva.svg"/>
-                        <img class="sheet-img-reacao" src="https://raw.githubusercontent.com/Capycat-Games/roll20-character-sheets/24d74a3cc49e69bf42c854cd8b1c5ee4f8e7b8f1/Skyfall/imgs/reacao.svg"/>
+                        <img class="sheet-img-acao"/>
+                        <img class="sheet-img-bonus"/>
+                        <img class="sheet-img-livre"/>
+                        <img class="sheet-img-passiva"/>
+                        <img class="sheet-img-reacao"/>
                     </div>
-                    <button type="roll" name="roll_spell1" class="buttonspell" 
+                    <button type="roll" name="roll_spell1" class="sheet-buttonspell" 
                         value="&{template:actspell} {{character_name=@{character_name}}} {{tipoacao=@{tipoacao}}} {{nameaction=@{nameaction}}} {{custoacao=@{custoacao}}} {{info_actions=@{info_actions}}} {{descritores_actions=@{descritores_actions}}} {{alcance_actions=@{alcance_actions}}} {{alvo_actions=@{alvo_actions}}} {{duracao_actions=@{duracao_actions}}} {{component_actions=@{component_actions}}} {{gatilho_actions=@{gatilho_actions}}} {{ataque_actions=@{ataque_actions}}} {{acerto_actions=@{acerto_actions}}} {{erro_actions=@{erro_actions}}} {{efeito_actions=@{efeito_actions}}} {{especial_actions=@{especial_actions}}} {{customod_actions=@{customod_actions}}} {{tipomod_actions=@{tipomod_actions}}} {{description_actions=@{description_actions}}} {{modificacoes=@{modcheckone}@{modchecktwo}@{modcheckthree}@{modcheckfour}@{modcheckfive}@{modchecksix}@{modcheckseven}@{modcheckeigth}@{modchecknine}@{modcheckten}}} {{customodtwo=@{customodtwo_actions}}} {{tipomodtwo=@{tipomodtwo_actions}}}   {{descriptiontwo=@{descriptiontwo_actions}}} {{customodthree=@{customodthree_actions}}}  {{tipomodthree=@{tipomodthree_actions}}} {{descriptionthree=@{descriptionthree_actions}}} {{customodfour=@{customodfour_actions}}}    {{tipomodfour=@{tipomodfour_actions}}}  {{descriptionfour=@{descriptionfour_actions}}} {{customodfive=@{customodfive_actions}}}    {{tipomodfive=@{tipomodfive_actions}}}  {{descriptionfive=@{descriptionfive_actions}}} {{customodsix=@{customodsix_actions}}}      {{tipomodsix=@{tipomodsix_actions}}}   {{descriptionsix=@{descriptionsix_actions}}} {{customodseven=@{customodseven_actions}}}  {{tipomodseven=@{tipomodseven_actions}}} {{descriptionseven=@{descriptionseven_actions}}} {{customodeigth=@{customodeigth_actions}}}  {{tipomodeigth=@{tipomodeigth_actions}}} {{descriptioneigth=@{descriptioneigth_actions}}} {{customodnine=@{customodnine_actions}}}    {{tipomodnine=@{tipomodnine_actions}}}  {{descriptionnine=@{descriptionnine_actions}}} {{customodten=@{customodten_actions}}} {{tipomodten=@{tipomodten_actions}}} {{descriptionten=@{descriptionten_actions}}} {{modcheckone=[[@{modcheckone}]]}} {{modchecktwo=[[@{modchecktwo}]}} {{{modcheckthree}=[[@{modcheckthree}]}} {{{modcheckfour}=[[@{modcheckfour}]}} {{{modcheckfive}=[[@{modcheckfive}]}} {{{modchecksix}=[[@{modchecksix}]}} {{{modcheckseven}=[[@{modcheckseven}]}} {{{modcheckeigth}=[[@{modcheckeigth}]}} {{{modchecknine}=[[@{modchecknine}]}} {{{modcheckten=}[[@{modcheckten}]}} ">
                         <span class="sheet-name-action" name="attr_nameactionshow" value="@{nameaction}"></span>
                     </button>
@@ -934,11 +934,11 @@
                         <select class="sheet-custoacao" name="attr_custoacao">
                             <option value="-" selected>-</option>
                             <option value="rep">Rep</option>
-                            <option value="1pe">1 PE</option>
-                            <option value="2pe">2 PE</option>
-                            <option value="3pe">3 PE</option>
-                            <option value="4pe">4 PE</option>
-                            <option value="5pe">5 PE</option>
+                            <option value="1PE">1 PE</option>
+                            <option value="2PE">2 PE</option>
+                            <option value="3PE">3 PE</option>
+                            <option value="4PE">4 PE</option>
+                            <option value="5PE">5 PE</option>
                         </select>
                         <div class="sheet-even">
                             <span>Informações</span>
@@ -1132,7 +1132,7 @@
                 </div>
                 <div>
                     <span>BÔNUS DE ATAQUE</span>
-                    <input class="singleline" name="attr_bonusataquemagia" type="text" spellcheck="false" value=""/>
+                    <input class="singleline" name="attr_bonusataquemagia" type="number" spellcheck="false" value="(@{spellcasting_attribute})+(@{proficient_bonus})" disabled="true"/>
                 </div>
             </div>
             <div class="sheet-spells-container">
@@ -1140,13 +1140,13 @@
                     <div class="sheet-container-single-spell">
                         <div class="sheet-style-acao">
                             <input type="hidden" class="sheet-tipoacaoshow" name="attr_tipoacaoshow" value="" >
-                            <img class="sheet-img-acao" src="https://raw.githubusercontent.com/Capycat-Games/roll20-character-sheets/24d74a3cc49e69bf42c854cd8b1c5ee4f8e7b8f1/Skyfall/imgs/acao.svg"/>
-                            <img class="sheet-img-bonus" src="https://raw.githubusercontent.com/Capycat-Games/roll20-character-sheets/24d74a3cc49e69bf42c854cd8b1c5ee4f8e7b8f1/Skyfall/imgs/bonus.svg"/>
-                            <img class="sheet-img-livre" src="https://raw.githubusercontent.com/Capycat-Games/roll20-character-sheets/1b8f412973cf0296d09e189b0c18752ac377bfc5/Skyfall/imgs/livre.svg"/>
-                            <img class="sheet-img-passiva" src="https://raw.githubusercontent.com/Capycat-Games/roll20-character-sheets/1b8f412973cf0296d09e189b0c18752ac377bfc5/Skyfall/imgs/passiva.svg"/>
-                            <img class="sheet-img-reacao" src="https://raw.githubusercontent.com/Capycat-Games/roll20-character-sheets/24d74a3cc49e69bf42c854cd8b1c5ee4f8e7b8f1/Skyfall/imgs/reacao.svg"/>
+                            <img class="sheet-img-acao" />
+                            <img class="sheet-img-bonus"/>
+                            <img class="sheet-img-livre" />
+                            <img class="sheet-img-passiva" />
+                            <img class="sheet-img-reacao" />
                         </div>
-                        <button type="roll" name="roll_spell1" class="buttonspell" value="&{template:actspell} {{character_name=@{character_name}}} {{tipoacao=@{tipoacao}}} {{nameaction=@{nameaction}}} {{custoacao=@{custoacao}}} {{info_actions=@{info_spells}}} {{descritores_actions=@{descritores_actions}}} {{alcance_actions=@{alcance_spells}}} {{alvo_actions=@{alvo_spells}}} {{duracao_actions=@{duracao_spells}}} {{component_actions=@{component_spells}}} {{gatilho_actions=@{gatilho_spells}}} {{ataque_actions=@{ataque_spells}}} {{acerto_actions=@{acerto_spells}}} {{erro_actions=@{erro_spells}}} {{efeito_actions=@{efeito_spells}}} {{especial_actions=@{especial_actions}}}  {{customod_actions=@{customod_actions}}} {{tipomod_actions=@{tipomod_actions}}} {{description_actions=@{description_actions}}} {{modificacoes=@{modcheckone}@{modchecktwo}@{modcheckthree}@{modcheckfour}@{modcheckfive}@{modchecksix}@{modcheckseven}@{modcheckeigth}@{modchecknine}@{modcheckten}}} {{customodtwo=@{customodtwo_actions}}} {{tipomodtwo=@{tipomodtwo_actions}}}   {{descriptiontwo=@{descriptiontwo_actions}}} {{customodthree=@{customodthree_actions}}}  {{tipomodthree=@{tipomodthree_actions}}} {{descriptionthree=@{descriptionthree_actions}}} {{customodfour=@{customodfour_actions}}}    {{tipomodfour=@{tipomodfour_actions}}}  {{descriptionfour=@{descriptionfour_actions}}} {{customodfive=@{customodfive_actions}}}    {{tipomodfive=@{tipomodfive_actions}}}  {{descriptionfive=@{descriptionfive_actions}}} {{customodsix=@{customodsix_actions}}}      {{tipomodsix=@{tipomodsix_actions}}}   {{descriptionsix=@{descriptionsix_actions}}} {{customodseven=@{customodseven_actions}}}  {{tipomodseven=@{tipomodseven_actions}}} {{descriptionseven=@{descriptionseven_actions}}} {{customodeigth=@{customodeigth_actions}}}  {{tipomodeigth=@{tipomodeigth_actions}}} {{descriptioneigth=@{descriptioneigth_actions}}} {{customodnine=@{customodnine_actions}}}    {{tipomodnine=@{tipomodnine_actions}}}  {{descriptionnine=@{descriptionnine_actions}}} {{customodten=@{customodten_actions}}} {{tipomodten=@{tipomodten_actions}}} {{descriptionten=@{descriptionten_actions}}} {{modcheckone=[[@{modcheckone}]]}} {{modchecktwo=[[@{modchecktwo}]}} {{{modcheckthree}=[[@{modcheckthree}]}} {{{modcheckfour}=[[@{modcheckfour}]}} {{{modcheckfive}=[[@{modcheckfive}]}} {{{modchecksix}=[[@{modchecksix}]}} {{{modcheckseven}=[[@{modcheckseven}]}} {{{modcheckeigth}=[[@{modcheckeigth}]}} {{{modchecknine}=[[@{modchecknine}]}} {{{modcheckten=}[[@{modcheckten}]}} ">
+                        <button type="roll" name="roll_spell1" class="sheet-buttonspell" value="&{template:actspell} {{character_name=@{character_name}}} {{tipoacao=@{tipoacao}}} {{nameaction=@{nameaction}}} {{custoacao=@{custoacao}}} {{info_actions=@{info_spells}}} {{descritores_actions=@{descritores_actions}}} {{alcance_actions=@{alcance_spells}}} {{alvo_actions=@{alvo_spells}}} {{duracao_actions=@{duracao_spells}}} {{component_actions=@{component_spells}}} {{gatilho_actions=@{gatilho_spells}}} {{ataque_actions=@{ataque_spells}}} {{acerto_actions=@{acerto_spells}}} {{erro_actions=@{erro_spells}}} {{efeito_actions=@{efeito_spells}}} {{especial_actions=@{especial_actions}}}  {{customod_actions=@{customod_actions}}} {{tipomod_actions=@{tipomod_actions}}} {{description_actions=@{description_actions}}} {{modificacoes=@{modcheckone}@{modchecktwo}@{modcheckthree}@{modcheckfour}@{modcheckfive}@{modchecksix}@{modcheckseven}@{modcheckeigth}@{modchecknine}@{modcheckten}}} {{customodtwo=@{customodtwo_actions}}} {{tipomodtwo=@{tipomodtwo_actions}}}   {{descriptiontwo=@{descriptiontwo_actions}}} {{customodthree=@{customodthree_actions}}}  {{tipomodthree=@{tipomodthree_actions}}} {{descriptionthree=@{descriptionthree_actions}}} {{customodfour=@{customodfour_actions}}}    {{tipomodfour=@{tipomodfour_actions}}}  {{descriptionfour=@{descriptionfour_actions}}} {{customodfive=@{customodfive_actions}}}    {{tipomodfive=@{tipomodfive_actions}}}  {{descriptionfive=@{descriptionfive_actions}}} {{customodsix=@{customodsix_actions}}}      {{tipomodsix=@{tipomodsix_actions}}}   {{descriptionsix=@{descriptionsix_actions}}} {{customodseven=@{customodseven_actions}}}  {{tipomodseven=@{tipomodseven_actions}}} {{descriptionseven=@{descriptionseven_actions}}} {{customodeigth=@{customodeigth_actions}}}  {{tipomodeigth=@{tipomodeigth_actions}}} {{descriptioneigth=@{descriptioneigth_actions}}} {{customodnine=@{customodnine_actions}}}    {{tipomodnine=@{tipomodnine_actions}}}  {{descriptionnine=@{descriptionnine_actions}}} {{customodten=@{customodten_actions}}} {{tipomodten=@{tipomodten_actions}}} {{descriptionten=@{descriptionten_actions}}} {{modcheckone=[[@{modcheckone}]]}} {{modchecktwo=[[@{modchecktwo}]}} {{{modcheckthree}=[[@{modcheckthree}]}} {{{modcheckfour}=[[@{modcheckfour}]}} {{{modcheckfive}=[[@{modcheckfive}]}} {{{modchecksix}=[[@{modchecksix}]}} {{{modcheckseven}=[[@{modcheckseven}]}} {{{modcheckeigth}=[[@{modcheckeigth}]}} {{{modchecknine}=[[@{modchecknine}]}} {{{modcheckten=}[[@{modcheckten}]}} ">
                             <span class="sheet-name-action" name="attr_nameactionshow" value="@{nameaction}"></span>
                         </button>
                         <span name="attr_custoacaoshow" value="@{custoacao}" class="sheet-custo-header"></span>
@@ -1165,11 +1165,11 @@
                             <select class="sheet-custoacao" name="attr_custoacao">
                                 <option value="-" selected>-</option>
                                 <option value="rep">Rep</option>
-                                <option value="1pe">1 PE</option>
-                                <option value="2pe">2 PE</option>
-                                <option value="3pe">3 PE</option>
-                                <option value="4pe">4 PE</option>
-                                <option value="5pe">5 PE</option>
+                                <option value="1PE">1 PE</option>
+                                <option value="2PE">2 PE</option>
+                                <option value="3PE">3 PE</option>
+                                <option value="4PE">4 PE</option>
+                                <option value="5PE">5 PE</option>
                             </select>
                             <div class="sheet-even">
                                 <span>Informações</span>
@@ -1400,7 +1400,7 @@
 
     let calculate_load = function(){
         getAttrs(["character_strength"], function(v){
-            let base_volume = 10;
+            let base_volume = 16;
 
             if(v.character_strength > 0){
                 base_volume += (convert_to_int(v.character_strength) * 3);
@@ -1441,10 +1441,10 @@
                 $20(`.sheet-attr-span-${attribute}`).removeClass("sheet-active-element");
                 $20(`.sheet-skills-body`).removeClass("sheet-skills-active");
                
+                setAttrs({[`rawroll`]: final_roll});
                 setAttrs({[`selectedattribute`]: "" });
                 setAttrs({[`selectedrawvalue`]: "" });
                 setAttrs({[`rawattribute`]: ""});
-                setAttrs({[`rawroll`]: final_roll});
             }
         }); 
     }
@@ -1499,13 +1499,13 @@
             let roll_construction = "";                 
             
             if(arr_skill[1] == "simples"){
-                roll_construction = `1d20 + @{selectedrawvalue}+(@{${arr_skill[0]}_proficiency} &#42; @{proficient_bonus} &#42; (1 + @{${arr_skill[0]}_especialization})) + @{mod_${arr_skill[0]}}`;
+                roll_construction = `1d20 + ${v["selectedrawvalue"]}+(@{${arr_skill[0]}_proficiency} * @{proficient_bonus} * (1 + @{${arr_skill[0]}_especialization})) + @{mod_${arr_skill[0]}}`;
             }
             if(arr_skill[1] == "vantagem"){
-                roll_construction = `2d20kh1 + @{selectedrawvalue}+(@{${arr_skill[0]}_proficiency} &#42; @{proficient_bonus} &#42; (1 + @{${arr_skill[0]}_especialization})) + @{mod_${arr_skill[0]}}`;
+                roll_construction = `2d20kh1 + ${v["selectedrawvalue"]}+(@{${arr_skill[0]}_proficiency} * @{proficient_bonus} * (1 + @{${arr_skill[0]}_especialization})) + @{mod_${arr_skill[0]}}`;
             }
             if(arr_skill[1] == "desvantagem"){
-                roll_construction = `2d20kl1 + @{selectedrawvalue}+(@{${arr_skill[0]}_proficiency} &#42; @{proficient_bonus} &#42; (1 + @{${arr_skill[0]}_especialization})) + @{mod_${arr_skill[0]}}`;
+                roll_construction = `2d20kl1 + ${v["selectedrawvalue"]}+(@{${arr_skill[0]}_proficiency} * @{proficient_bonus} * (1 + @{${arr_skill[0]}_especialization})) + @{mod_${arr_skill[0]}}`;
             }
 
             let final_roll = `&{template:skillroll}{{character=@{character_name}}} {{pericia=${pericia_name}(${atribute_name[v.rawattribute]})}} {{rolagem=[[ ${roll_construction} ]]}} {{reroll=[ReRoll](~reroll)}}`;
@@ -1518,10 +1518,10 @@
             });
             $20(`.sheet-skills-body`).removeClass("sheet-skills-active");
                
+            setAttrs({[`rawroll`]: final_roll});
             setAttrs({[`selectedattribute`]: "" });
             setAttrs({[`selectedrawvalue`]: "" });
-            setAttrs({[`${arr_skill[0]}_checkbox`]: 0})
-            setAttrs({[`rawroll`]: final_roll});
+            setAttrs({[`${arr_skill[0]}_checkbox`]: 0});            
 
         });
 
@@ -2209,8 +2209,13 @@
             <span>{{character_name}}</span>
         </div>
         <div class="sheet-actionspell-header">
-            <span>{{{tipoacao}}}</span> |
-            <span>{{{nameaction}}}</span> |
+            <span>{{{tipoacao}}}</span> | 
+            <span class="sheet-img-acao"><img class="sheet-img-acao" />|</span> 
+            <span class="sheet-img-bonus"><img class="sheet-img-bonus"/>|</span> 
+            <span class="sheet-img-livre"><img class="sheet-img-livre" />|</span> 
+            <span class="sheet-img-passiva"><img class="sheet-img-passiva" />|</span> 
+            <span class="sheet-img-reacao" ><img class="sheet-img-reacao" />|</span>  
+            <span>{{{nameaction}}}</span>   |   
             <span>{{custoacao}}</span>
         </div>       
         {{#descritores_actions}}
@@ -2442,3 +2447,7 @@
         </div>
     </div>   
 </rolltemplate>
+
+
+
+

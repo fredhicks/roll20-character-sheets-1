@@ -1,3 +1,69 @@
+2024-04-27
+
+- Charactermancer:
+  - Fix material and creature lore specializations
+  - Really hit with a hammer the hide chaactermancer button.
+    Hide directly at end of charactermancer.
+- Direct critical roll (eg roll an C Electricity)
+- Rest to recover Fatigue penalties
+- Count the weight of items < 1 lbs
+- Update total maneuver penalty when fatigue changes
+- Stat info show potential (clearly)
+- Fix Talents applying on level up
+- Bugs:
+  - Fix some internal calls using terrible way of saving ranks
+  - Fix for targets smaller than attacker (no more insane DBs)
+  - Update Weight Allowance when strength changes.
+  - Fix alignment of stat info hover
+  - Fix adding skills failing on error
+- Stat gain:
+  - Show the potential and temporary for stat gains
+  - Add and remove stat gains tracked correctly
+  - Extra stat gains are now required
+  - Stat gains persist through level up
+- Internal:
+  - Remove unused charmancer.html.gvz
+  - Less logging on feats of strength
+  - RMU Async functions a bit more verbose on error
+
+2024-04-20
+
+- Fatigue rolls
+- Track HP
+- Calculate total maneuver:
+  - Fatigue
+  - Injury
+  - HP Loss
+- RR rolls
+- (internal) Async calls now timeout and unblock if too long
+- Charactermancer:
+  - Toggle button dissapears more often (when it should)
+  - Back from languages goes back one, not two.
+  - Show region selectors in culture ranks
+  - Fix selection of Region Lore Skills
+  - Fancy navigation buttons
+  - Fix most skills (not Material Lore and Languages)
+
+2024-04-13
+
+- Add support for the targetting button.
+
+2024-05-06
+
+- Attacks:
+   - HP Scaling (based on size - beta rules)
+   - Add missing criticals to attack results.  So all crits on attack tables should resolve
+   - Add DB Bonus for small attacks
+   - Fix bug: Attack scaling based on Attack size not attacker size.
+- Fix bug finding attack types (eg Greater Hafted)
+- AP tracking
+   - With hacky messages!
+   - Update preview image to something a little more relevance.
+
+2024-04-29
+
+ - Attacks!
+
 2024-04-14
 
  - Fix bug in parseIntDefault to return the default if passed a 0

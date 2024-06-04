@@ -68,6 +68,15 @@ h3 {
   touch-action: manipulation;
 }
 
+.fancybutton.fancybuttoninline {
+    padding: 0.2em;
+    line-height: 15px;
+    border-bottom-left-radius: 8px 125px;
+    border-bottom-right-radius: 125px 8px;
+    border-top-left-radius: 125px 8px;
+    border-top-right-radius: 11px 115px;
+}
+
 .fancybutton:hover {
   box-shadow: rgba(0, 0, 0, .3) 2px 8px 8px -5px;
   transform: translate3d(0, 2px, 0);
@@ -394,6 +403,7 @@ input:not(:checked).toggle + .toggler { display: none; }
     white-space: pre;
     width: fit-content;
     border-radius: 255px 15px 225px 15px/15px 225px 15px 255px;
+    text-align: left;
 
     background-size: 20px 20px;
     background-image: linear-gradient(to right, rgba(137,207,240,1.0) 1px, transparent 1px),
@@ -490,6 +500,15 @@ div.attacks {
     background: #eed;
 }
 
+
+div.foe {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    background: rgb(217,222,244);
+    border-radius: 3px;
+    border-style: solid;
+    border-width: 1px;
+}
 
 
 /**
@@ -723,6 +742,12 @@ div.repcontrol {
     width: 10em;
 }
 
+.cm_info {
+    border: 3px solid rgb(20,21,22);
+    border-radius: 255px 15px 225px 15px/15px 225px 15px 255px;
+}
+
+
 /*
  * Levelup DP box.  Starts in the usual spot but sticks to the top so we can see costs all
  * the time.
@@ -757,6 +782,25 @@ button.nodie {
   transition: border-left 300ms ease-in-out, padding-left 300ms ease-in-out;
 }
 
+.sheet-rolltemplate-rmucritical {
+  padding: 1rem;
+  width: 95%;
+  box-shadow: 0 5px 20px 0 rgba(0,0,0,0.25),
+    0 5px 10px 0 rgba(0,0,0,0.17);
+    /* Dark version:  0A4F50 */
+  background-color: #ADF4F5;
+  border-radius: 0.5rem;
+  line-height: 1.5em;
+  border-left: 0 solid #F5ADC4;
+  transition: border-left 300ms ease-in-out, padding-left 300ms ease-in-out;
+}
+
+.sheet-rolltemplate-rmucritical:hover {
+  box-shadow: 0 5px 20px 0 rgba(0,0,0,0.35),
+    0 5px 10px 0 rgba(0,0,0,0.35);
+}
+
+
 /* Stylesheet for roll boxes */
 .sheet-rolltemplate-rmuinitbox {
   background-color: rgb(216, 255, 131);
@@ -785,6 +829,69 @@ button.nodie {
     border: 1px solid red;
 }
 
+
+.sheet-rolltemplate-rmurollbox .inlinerollresult,
+.sheet-rolltemplate-rmuattacktarget .inlinerollresult,
+.sheet-rolltemplate-noboxes .inlinerollresult
+{
+    background-color: transparent;
+    border: none !important;
+    padding: none;
+    font-weight: inherit;
+    cursor: help;
+    font-size: 1em;
+}
+
+/* Stylesheet for roll boxes */
+.sheet-rolltemplate-rmumsg {
+  padding: 1rem;
+  width: 95%;
+}
+
+/**/
+
+.actionblock {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+}
+
+
+.aptrackerbox {
+  display: flex;
+  margin: 1px;
+  gap: 2px;
+}
+
+.aptrack {
+  order: 1;
+  border: 1px solid black;
+  border-radius: 6px !important;
+  background: grey;
+  height: 12px !important;
+  width: 12px !important;
+  appearance: none;
+  -webkit-appearance: none;
+  cursor: pointer;
+  z-index: 1;
+}
+
+.aptrack:checked {
+  opacity: 0;
+  z-index: 0;
+  position: absolute;
+}
+
+.aptrack:checked ~ .aptrack {
+  order: 3;
+  background-color: transparent;
+}
+
+.aptrack.reset {
+  order: 2;
+  background-color: black;
+}
+
+/* vim: set sts=2 sw=2 syn=css : */
 
 
 
